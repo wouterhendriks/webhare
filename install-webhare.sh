@@ -40,8 +40,8 @@ cd "$installpath"
 ~/projects/webhare/whtree/bin/wh make postuninstall
 ~/projects/webhare/whtree/bin/wh make postinstall
 
-printf "\n## - running WebHare in the background ##\n"
-~/projects/webhare/whtree/bin/wh console &
+printf "## - setting up '~/mods/' symbolic link for convenience ##\n"
+ln -s "$installpath/webhare/whtree/var/installedmodules" ~/mods
 
 printf "\n## - installing extra base modules ##\n"
 ~/projects/webhare/whtree/bin/wh getmodule webhare/socialite
@@ -49,17 +49,19 @@ printf "\n## - installing extra base modules ##\n"
 ~/projects/webhare/whtree/bin/wh getmodule webhare/google
 #FIXME: nerdsandcompany module ---------- wh getmodule git@bitbucket.org:itmundi/nerds-company-webhare-base.git
 
-printf "## - setting up '~/mods/' symbolic link for convenience ##\n"
-ln -s "$installpath/webhare/whtree/var/installedmodules" ~/mods
+printf "\n## - running WebHare in the background ##\n"
+~/projects/webhare/whtree/bin/wh console &
+
+#give WebHare some time to start for the first time
+sleep 10
 
 #FIXME: run 'wh console' (screen -r?)
 
 printf "## - run 'wh setupdev', which will setup a basic development environment ##\n"
 ~/projects/webhare/whtree/bin/wh setupdev
 
-printf "## - all done; performing a soft reset just to be sure ##\n"
-~/projects/webhare/whtree/bin/wh softreset
-
-# FIXME: Run extra script to setup e-mail, UA override codes, etc
+#FIXME: Doesn't 'wh setupdev' perform a soft reset already?
+#printf "## - all done; performing a soft reset just to be sure ##\n"
+#~/projects/webhare/whtree/bin/wh softreset
 
 printf '\n'
