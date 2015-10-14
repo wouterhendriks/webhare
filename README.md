@@ -7,6 +7,6 @@ This script assumes the following:
 
 - you are using a Mac
 - your public key is added for the WebHare Git repository on Gitlab
-- Homebrew is installed and up-to-date
+- [Homebrew](http://brew.sh/) is installed and up-to-date
 - `brew doctor` gives a clean result
 - Node.JS is installed using Homebrew (`brew install node`)
