@@ -47,7 +47,7 @@ printf "\n## - installing extra base modules ##\n"
 ~/projects/webhare/whtree/bin/wh getmodule webhare/socialite
 ~/projects/webhare/whtree/bin/wh getmodule webhare/tollium_dev
 ~/projects/webhare/whtree/bin/wh getmodule webhare/google
-#FIXME: nerdsandcompany module ---------- wh getmodule git@bitbucket.org:itmundi/nerds-company-webhare-base.git
+#FIXME: internal base module ---------- wh getmodule git@bitbucket.org:itmundi/....git
 
 printf "\n## - running WebHare in the background ##\n"
 ~/projects/webhare/whtree/bin/wh console &
