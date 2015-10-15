@@ -50,10 +50,10 @@ printf "\n## - installing extra base modules ##\n"
 #FIXME: internal base module ---------- wh getmodule git@bitbucket.org:itmundi/....git
 
 printf "\n## - running WebHare in the background ##\n"
-~/projects/webhare/whtree/bin/wh console &
+~/projects/webhare/whtree/bin/webhare daemon
 
-#give WebHare some time to start for the first time
-sleep 10
+printf "\n## - give WebHare some time to start for the first time (sleeping now...) ##\n"
+sleep 20
 
 #FIXME: run 'wh console' (screen -r?)
 
